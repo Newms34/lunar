@@ -17,8 +17,8 @@ x"/1 = 197/166 *px = 1.186746987951807 * 69
 
 'translateX('+t.x+'px) translateY('+t.y+'px) translateZ('+t.z+'px) rotateX('+r.x+'deg) rotateY('+r.y+'deg) rotateZ('+r.z+'deg)'
 
-PROGRESS:https://jsfiddle.net/4kd401e1/8/
-423/300 = 344/x: ?
+30x50x171: atrium
 
+64.8 - 26.2 = 38.6
 
 MEASURER: https://jsfiddle.net/c9mLfo41/27/show/
