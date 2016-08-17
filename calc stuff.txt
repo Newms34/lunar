@@ -1,0 +1,24 @@
+DS dimensions:
+platform: 166" by 69"
+
+
+197px = 166"
+
+need inches
+so
+x"/1 = 197/166 *px = 1.186746987951807 * 69 
+
+58 x 69 in = diag corner panel
+'large' panels are 65 x 69 in;
+
+58.14213197969544/1.414213562373095 = 41.11269579548587
+147 - (2*41.11269579548587) = 64.7746084
+
+
+'translateX('+t.x+'px) translateY('+t.y+'px) translateZ('+t.z+'px) rotateX('+r.x+'deg) rotateY('+r.y+'deg) rotateZ('+r.z+'deg)'
+
+PROGRESS:https://jsfiddle.net/4kd401e1/8/
+423/300 = 344/x: ?
+
+
+MEASURER: https://jsfiddle.net/c9mLfo41/27/show/

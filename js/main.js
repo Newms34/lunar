@@ -47,10 +47,6 @@ var makeCyl = function(targ, h, w, v, t, r, rez) {
         document.querySelector('#cylinder' + numCyls).style.transform = 'translateX(' + t.x + 'px) translateY(' + t.y + 'px) translateZ(' + t.z + 'px) rotateX(' + r.x + 'deg) rotateY(' + r.y + 'deg) rotateZ(' + r.z + 'deg)';
     }
 };
-//(targ, height, width(diameter), val,trans,rot) 
-// cyls.forEach(function(c) {
-//     makeCyl(c[0], c[1], c[2], c[3], c[4], c[5], c[6])
-// })
 var totalObjs = rects.length + cyls.length,
     currObj = 0,
     buildIt = function() {
@@ -63,7 +59,6 @@ var totalObjs = rects.length + cyls.length,
             if (rects[currObj].class){
                 newDiv.className = rects[currObj].class
             }
-            console.log(newDiv);
             $(rects[currObj].parent).append(newDiv)
         }else{
             makeCyl(cyls[currObj-rects.length][0], cyls[currObj-rects.length][1], cyls[currObj-rects.length][2], cyls[currObj-rects.length][3], cyls[currObj-rects.length][4], cyls[currObj-rects.length][5], cyls[currObj-rects.length][6])
@@ -72,7 +67,7 @@ var totalObjs = rects.length + cyls.length,
         if (currObj<totalObjs){
             setTimeout(function(){
                 buildIt();
-            },100)
+            },50)
         }
     };
 

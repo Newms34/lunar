@@ -532,4 +532,148 @@ var rects = [{
     'parent': '#descent-stage',
     'class': 'pad',
     'id': 'pad4'
+}, {
+    'parent': '#mc-left',
+    'class': 'pod',
+    'id': 'pod-left'
+}, {
+    'parent': '#mc-right',
+    'class': 'pod',
+    'id': 'pod-right'
+}, {
+    'parent': '#pod-right',
+    'class': 'pod-sec-f',
+    'id': null
+}, {
+    'parent': '#pod-right .pod-sec-f',
+    'class': 'pod-sec-d-t',
+    'id': null
+}, {
+    'parent': '#pod-right .pod-sec-f',
+    'class': 'pod-sec-d-b',
+    'id': null
+}, {
+    'parent': '#pod-right .pod-sec-f',
+    'class': 'pod-sec-d-r',
+    'id': null
+},{
+    'parent': '#pod-right .pod-sec-f',
+    'class': 'pod-sec-d-br',
+    'id': null
+},  {
+    'parent': '#pod-right .pod-sec-f',
+    'class': 'pod-sec-d-tr',
+    'id': null
+}, {
+    'parent': '#pod-right',
+    'class': 'pod-sec-b',
+    'id': null
+}, {
+    'parent': '#pod-right .pod-sec-b',
+    'class': 'pod-sec-d-t',
+    'id': null
+}, {
+    'parent': '#pod-right .pod-sec-b',
+    'class': 'pod-sec-d-b',
+    'id': null
+}, {
+    'parent': '#pod-right .pod-sec-b',
+    'class': 'pod-sec-d-r',
+    'id': null
+},{
+    'parent': '#pod-right .pod-sec-b',
+    'class': 'pod-sec-d-br',
+    'id': null
+},  {
+    'parent': '#pod-right .pod-sec-b',
+    'class': 'pod-sec-d-tr',
+    'id': null
+}, {
+    'parent': '#pod-right',
+    'class': 'pod-sec-s-t',
+    'id': null
+}, {
+    'parent': '#pod-right',
+    'class': 'pod-sec-s-b',
+    'id': null
+}, {
+    'parent': '#pod-right',
+    'class': 'pod-sec-s-s',
+    'id': null
+}, {
+    'parent': '#pod-right',
+    'class': 'pod-sec-s-ts',
+    'id': null
+}, {
+    'parent': '#pod-right',
+    'class': 'pod-sec-s-bs',
+    'id': null
+},{
+    'parent': '#pod-left',
+    'class': 'pod-sec-f',
+    'id': null
+}, {
+    'parent': '#pod-left .pod-sec-f',
+    'class': 'pod-sec-d-t',
+    'id': null
+}, {
+    'parent': '#pod-left .pod-sec-f',
+    'class': 'pod-sec-d-b',
+    'id': null
+}, {
+    'parent': '#pod-left .pod-sec-f',
+    'class': 'pod-sec-d-r',
+    'id': null
+},{
+    'parent': '#pod-left .pod-sec-f',
+    'class': 'pod-sec-d-br',
+    'id': null
+},  {
+    'parent': '#pod-left .pod-sec-f',
+    'class': 'pod-sec-d-tr',
+    'id': null
+}, {
+    'parent': '#pod-left',
+    'class': 'pod-sec-b',
+    'id': null
+}, {
+    'parent': '#pod-left .pod-sec-b',
+    'class': 'pod-sec-d-t',
+    'id': null
+}, {
+    'parent': '#pod-left .pod-sec-b',
+    'class': 'pod-sec-d-b',
+    'id': null
+}, {
+    'parent': '#pod-left .pod-sec-b',
+    'class': 'pod-sec-d-r',
+    'id': null
+},{
+    'parent': '#pod-left .pod-sec-b',
+    'class': 'pod-sec-d-br',
+    'id': null
+},  {
+    'parent': '#pod-left .pod-sec-b',
+    'class': 'pod-sec-d-tr',
+    'id': null
+}, {
+    'parent': '#pod-left',
+    'class': 'pod-sec-s-t',
+    'id': null
+}, {
+    'parent': '#pod-left',
+    'class': 'pod-sec-s-b',
+    'id': null
+}, {
+    'parent': '#pod-left',
+    'class': 'pod-sec-s-s',
+    'id': null
+}, {
+    'parent': '#pod-left',
+    'class': 'pod-sec-s-ts',
+    'id': null
+}, {
+    'parent': '#pod-left',
+    'class': 'pod-sec-s-bs',
+    'id': null
 }]
