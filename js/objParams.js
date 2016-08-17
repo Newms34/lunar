@@ -716,4 +716,8 @@ var rects = [{
     'parent': '#atrium',
     'class': null,
     'id': 'at-b'
+}, {
+    'parent': '#atrium',
+    'class': null,
+    'id': 'at-r'
 }]
