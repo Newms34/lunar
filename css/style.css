@@ -375,8 +375,19 @@ body {
 }
 .pod-sec-fp{
     position:absolute;
-    background:#b3b3b3;
-    width:34px;
-    height:31px; 
-    transform:translateX(13px) translateY(26px) translateZ(30px) rotateY(90deg) rotateX(-36deg);
+    background:#b7b7b7;
+    width:46px;
+    height:35px; 
+    transform:translateZ(-13px) translateX(-34px);
 }
+.pod-sec-fp::before{
+    position:absolute;
+    content:'';
+    width:0px;
+    border-left:7px solid #b7b7b7;
+    border-top:8.5px solid transparent;
+    border-bottom:8.5px solid transparent;
+    height:15.5px; 
+    transform:translateX(46px);
+}
+

@@ -67,7 +67,7 @@ var totalObjs = rects.length + cyls.length,
         if (currObj<totalObjs){
             setTimeout(function(){
                 buildIt();
-            },50)
+            },2)
         }
     };
 

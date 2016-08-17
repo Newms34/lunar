@@ -676,4 +676,20 @@ var rects = [{
     'parent': '#pod-left',
     'class': 'pod-sec-s-bs',
     'id': null
+}, {
+    'parent': '#pod-left .pod-sec-b',
+    'class': 'pod-sec-fp',
+    'id': null
+}, {
+    'parent': '#pod-left .pod-sec-f',
+    'class': 'pod-sec-fp',
+    'id': null
+}, {
+    'parent': '#pod-right .pod-sec-b',
+    'class': 'pod-sec-fp',
+    'id': null
+}, {
+    'parent': '#pod-right .pod-sec-f',
+    'class': 'pod-sec-fp',
+    'id': null
 }]
