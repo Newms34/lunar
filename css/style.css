@@ -466,5 +466,52 @@ body {
     border-bottom: 104px solid #999;
     border-left: 14.987px solid transparent;
     border-right: 14.987px solid transparent;
-    transform:translateY(-74px) translateZ(24px) translateX(39px) rotateX(12deg);
+    transform: translateY(-74px) translateZ(24px) translateX(39px) rotateX(12deg);
+}
+
+#dock-port {
+    position: absolute;
+    left: 17px;
+    top: 27px;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    border: 3px ridge #d0d0d0;
+    background: #bbb;
+    background: -webkit-radial-gradient(#666, #bbb);
+    background: -o-radial-gradient(#666, #bbb);
+    background: -moz-radial-gradient(#666, #bbb);
+    background: radial-gradient(#666, #bbb);
+}
+
+#door {
+    position: absolute;
+    left: -13px;
+    top: 117px;
+    width: 46px;
+    height: 41px;
+    border-radius: 5px;
+    border: 3px ridge #d0d0d0;
+    background: #bbb;
+}
+
+.f-window {
+    position: absolute;
+    top: 34px;
+    z-index: -20;
+    height: 0px;
+    width: 0px;
+    border-top: 33px solid #333;
+    border-left: 16.5px solid transparent;
+    border-right: 16.5px solid transparent;
+}
+
+#wind1 {
+    left: 26px;
+    transform: rotateZ(-16deg);
+}
+
+#wind2 {
+    left: 108px;
+    transform: rotateZ(16deg);
 }

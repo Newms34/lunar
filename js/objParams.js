@@ -947,4 +947,20 @@ var rects = [{
     'parent': '#ds-s-4',
     'class': 'rcs-shield',
     'id': null
+}, {
+    'parent': '#mc-top',
+    'class': null,
+    'id': 'dock-port'
+}, {
+    'parent': '#at-f',
+    'class': null,
+    'id': 'door'
+}, {
+    'parent': '#mc-c-f',
+    'class': 'f-window',
+    'id': 'wind1'
+}, {
+    'parent': '#mc-c-f',
+    'class': 'f-window',
+    'id': 'wind2'
 }]

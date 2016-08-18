@@ -3,25 +3,23 @@ platform: 166" by 69"
 
 0.559 = img  ratio
 
-
-'translateX('+t.x+'px) translateY('+t.y+'px) translateZ('+t.z+'px) rotateX('+r.x+'deg) rotateY('+r.y+'deg) rotateZ('+r.z+'deg)'
-
-30x50x171: atrium
-
-64.8 - 26.2 = 38.6
-
+19.988 - 43.913 over 118.249. 19.988 away from str panel piece @ top, 20 @ bottom
 MEASURER: https://jsfiddle.net/c9mLfo41/27/show/
 
 
 TO DO: 
-1) RCS shields
-2) Docking port
-3) RCS nodes - each RCS node has FOUR jets:
+1) RCS nodes - each RCS node has FOUR jets:
 	v
 	o<
 	^
 	and is on a pyramidal structure made of TUBES (NOT solid pyramid!)
-4) docking port (decal?)
-5) 'porch'/ladder?
-6) windows (two triangle decals, slightly moved forward for viz)
-7)INTERACTIVITY!
+2) 'porch'/ladder?
+3)INTERACTIVITY!
+
+
+
+106/129.549217 = 40.73/x
+
+129.549217*40.73/106, x=49.97
+
+RAT:1.13793182
