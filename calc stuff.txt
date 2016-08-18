@@ -1,18 +1,7 @@
 DS dimensions:
 platform: 166" by 69"
 
-
-197px = 166"
-
-need inches
-so
-x"/1 = 197/166 *px = 1.186746987951807 * 69 
-
-58 x 69 in = diag corner panel
-'large' panels are 65 x 69 in;
-
-58.14213197969544/1.414213562373095 = 41.11269579548587
-147 - (2*41.11269579548587) = 64.7746084
+0.559 = img  ratio
 
 
 'translateX('+t.x+'px) translateY('+t.y+'px) translateZ('+t.z+'px) rotateX('+r.x+'deg) rotateY('+r.y+'deg) rotateZ('+r.z+'deg)'
@@ -22,3 +11,17 @@ x"/1 = 197/166 *px = 1.186746987951807 * 69
 64.8 - 26.2 = 38.6
 
 MEASURER: https://jsfiddle.net/c9mLfo41/27/show/
+
+
+TO DO: 
+1) RCS shields
+2) Docking port
+3) RCS nodes - each RCS node has FOUR jets:
+	v
+	o<
+	^
+	and is on a pyramidal structure made of TUBES (NOT solid pyramid!)
+4) docking port (decal?)
+5) 'porch'/ladder?
+6) windows (two triangle decals, slightly moved forward for viz)
+7)INTERACTIVITY!

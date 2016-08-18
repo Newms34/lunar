@@ -410,46 +410,61 @@ body {
     transform: translateX(46px);
 }
 
-#atrium{
+#atrium {
     position: absolute;
     transform-style: preserve-3d;
 }
-#at-f{
+
+#at-f {
     position: absolute;
-    height:0px;
-    width:26.2px;
-    border-left:19.3px solid transparent;
-    border-right:19.3px solid transparent;
-    border-bottom:171px solid #c2c2c2;
-    transform:translateX(50px) translateY(-9px) translateZ(-50px);
+    height: 0px;
+    width: 26.2px;
+    border-left: 19.3px solid transparent;
+    border-right: 19.3px solid transparent;
+    border-bottom: 171px solid #c2c2c2;
+    transform: translateX(50px) translateY(-9px) translateZ(-50px);
 }
-#at-t{
+
+#at-t {
     position: absolute;
     background: #b0b0b0;
-    width:26.2px;
-    height:50px;
-    transform:translateX(68px) rotateX(90deg) translateZ(34px) translateY(-25px);
+    width: 26.2px;
+    height: 50px;
+    transform: translateX(68px) rotateX(90deg) translateZ(34px) translateY(-25px);
 }
-#at-r{
+
+#at-r {
     position: absolute;
     background: #b7b7b7;
-    width:50px;
-    height:172.09px;
-    transform:rotateY(90deg) translateY(-9px) translateZ(36px) translateX(25px) rotateX(-6.44deg);
+    width: 50px;
+    height: 172.09px;
+    transform: rotateY(90deg) translateY(-9px) translateZ(36px) translateX(25px) rotateX(-6.44deg);
 }
-#at-l{
+
+#at-l {
     position: absolute;
     background: #b7b7b7;
-    width:50px;
-    height:172.09px;
-    transform:rotateY(90deg) translateY(-9px) translateZ(78px) translateX(25px) rotateX(6.44deg);
+    width: 50px;
+    height: 172.09px;
+    transform: rotateY(90deg) translateY(-9px) translateZ(78px) translateX(25px) rotateX(6.44deg);
 }
-#at-b{
+
+#at-b {
     position: absolute;
-    height:0px;
-    width:26.2px;
-    border-left:19.3px solid transparent;
-    border-right:19.3px solid transparent;
-    border-bottom:171px solid #b3b3b3;
-    transform:translateX(50px) translateY(-9px);
+    height: 0px;
+    width: 26.2px;
+    border-left: 19.3px solid transparent;
+    border-right: 19.3px solid transparent;
+    border-bottom: 171px solid #b3b3b3;
+    transform: translateX(50px) translateY(-9px);
+}
+
+.rcs-shield {
+    position: absolute;
+    width: 19.988px;
+    height: 0px;
+    border-bottom: 104px solid #999;
+    border-left: 14.987px solid transparent;
+    border-right: 14.987px solid transparent;
+    transform:translateY(-74px) translateZ(24px) translateX(39px) rotateX(12deg);
 }
