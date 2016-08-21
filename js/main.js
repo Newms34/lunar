@@ -1,5 +1,7 @@
 var cylRes = 15; //number of segs per cylinder (default, unless otherwise specified)
-var numCyls = 0,numCones=0;
+var numCyls = 0,
+    numCones = 0,
+    polyNum = 0;
 var makeCone = function(targ, h, w, v, isCone, t, r, rez) {
     numCones++;
     console.log('cone with rez:', rez)
@@ -25,6 +27,7 @@ var makeCone = function(targ, h, w, v, isCone, t, r, rez) {
     theCone.className = 'cone-cont';
     theCone.id = 'cone' + numCones;
     $(targ).append(theCone);
+    polyNum++;
     $(targ).css('transform-style', 'preserve-3d')
     for (var i = 0; i < rez; i++) {
         var val, hsl;
@@ -40,14 +43,13 @@ var makeCone = function(targ, h, w, v, isCone, t, r, rez) {
         seg.className = 'conSeg';
         seg.style.width = '0px';
         seg.style.height = '0px';
-        seg.style.borderBottom = Math.sqrt(Math.pow(w,2)+Math.pow(h,2))+'px solid '+hsl;
-        seg.style.borderLeft = (sw/2)+1+'px solid transparent';
-        seg.style.borderRight = (sw/2)+1+'px solid transparent';
-        seg.style.animationDelay = i*0.1+'s';
-        seg.style.transform = 'rotateY(' + (i * 360 / rez) + 'deg) translateZ(' + (w / 2) + 'px) rotateX('+(Math.asin((w/2)/Math.sqrt(Math.pow(w,2)+Math.pow(h,2)))*180/Math.PI)+'deg)';
-        //'+(Math.atan((w/2)/h)*180/Math.PI)+'
-        //+(Math.acos((w/2)/Math.sqrt(Math.pow(w,2)+Math.pow(h,2)))*180/Math.PI)
+        seg.style.borderBottom = Math.sqrt(Math.pow(w, 2) + Math.pow(h, 2)) + 'px solid ' + hsl;
+        seg.style.borderLeft = (sw / 2) + 1 + 'px solid transparent';
+        seg.style.borderRight = (sw / 2) + 1 + 'px solid transparent';
+        seg.style.animationDelay = i * 0.1 + 's';
+        seg.style.transform = 'rotateY(' + (i * 360 / rez) + 'deg) translateZ(' + (w / 2) + 'px) rotateX(' + (Math.asin((w / 2) / Math.sqrt(Math.pow(w, 2) + Math.pow(h, 2))) * 180 / Math.PI) + 'deg)';
         $('#cone' + numCones).append(seg);
+        polyNum++;
         document.querySelector('#cone' + numCones).style.transform = 'translateX(' + t.x + 'px) translateY(' + t.y + 'px) translateZ(' + t.z + 'px) rotateX(' + r.x + 'deg) rotateY(' + r.y + 'deg) rotateZ(' + r.z + 'deg)';
     }
 };
@@ -76,6 +78,7 @@ var makeCyl = function(targ, h, w, v, isCone, t, r, rez) {
     theCyl.className = 'cyl-cont';
     theCyl.id = 'cylinder' + numCyls;
     $(targ).append(theCyl);
+    polyNum++;
     $(targ).css('transform-style', 'preserve-3d')
     for (var i = 0; i < rez; i++) {
         var val, hsl;
@@ -92,35 +95,39 @@ var makeCyl = function(targ, h, w, v, isCone, t, r, rez) {
         seg.style.width = sw + 1 + 'px';
         seg.style.height = h + 'px';
         seg.style.background = hsl;
-        seg.style.animationDelay = i*0.1+'s';
+        seg.style.animationDelay = i * 0.1 + 's';
         seg.style.transform = 'rotateY(' + (i * 360 / rez) + 'deg) translateZ(' + (w / 2) + 'px)';
         $('#cylinder' + numCyls).append(seg);
+        polyNum++;
         document.querySelector('#cylinder' + numCyls).style.transform = 'translateX(' + t.x + 'px) translateY(' + t.y + 'px) translateZ(' + t.z + 'px) rotateX(' + r.x + 'deg) rotateY(' + r.y + 'deg) rotateZ(' + r.z + 'deg)';
     }
 };
 var totalObjs = rects.length + cyls.length,
     currObj = 0,
     buildIt = function() {
-        if(rects[currObj]){
+        if (rects[currObj]) {
             //build a rectangle
             var newDiv = document.createElement('div');
-            if (rects[currObj].id){
+            if (rects[currObj].id) {
                 newDiv.id = rects[currObj].id
             }
-            if (rects[currObj].class){
+            if (rects[currObj].class) {
                 newDiv.className = rects[currObj].class
             }
             $(rects[currObj].parent).append(newDiv)
-        }else if(!cyls[currObj-rects.length][4]){
-            makeCyl(cyls[currObj-rects.length][0], cyls[currObj-rects.length][1], cyls[currObj-rects.length][2], cyls[currObj-rects.length][3], cyls[currObj-rects.length][4], cyls[currObj-rects.length][5], cyls[currObj-rects.length][6], cyls[currObj-rects.length][7])
-        }else{
-            makeCone(cyls[currObj-rects.length][0], cyls[currObj-rects.length][1], cyls[currObj-rects.length][2], cyls[currObj-rects.length][3], cyls[currObj-rects.length][4], cyls[currObj-rects.length][5], cyls[currObj-rects.length][6], cyls[currObj-rects.length][7])
+            polyNum++;
+        } else if (!cyls[currObj - rects.length][4]) {
+            makeCyl(cyls[currObj - rects.length][0], cyls[currObj - rects.length][1], cyls[currObj - rects.length][2], cyls[currObj - rects.length][3], cyls[currObj - rects.length][4], cyls[currObj - rects.length][5], cyls[currObj - rects.length][6], cyls[currObj - rects.length][7])
+        } else {
+            makeCone(cyls[currObj - rects.length][0], cyls[currObj - rects.length][1], cyls[currObj - rects.length][2], cyls[currObj - rects.length][3], cyls[currObj - rects.length][4], cyls[currObj - rects.length][5], cyls[currObj - rects.length][6], cyls[currObj - rects.length][7])
         }
         currObj++;
-        if (currObj<totalObjs){
-            setTimeout(function(){
+        if (currObj < totalObjs) {
+            setTimeout(function() {
                 buildIt();
-            },5)
+            }, 5)
+        } else {
+            console.log('FINAL POLY COUNT:', polyNum, 'polygons.');
         }
     };
 
