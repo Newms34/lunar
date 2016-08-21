@@ -1,7 +1,9 @@
 var cylRes = 15; //number of segs per cylinder (default, unless otherwise specified)
 var numCyls = 0,
     numCones = 0,
-    polyNum = 0;
+    polyNum = 0,
+    rcsNoz,//for easy reference later to shut them all OFF.
+    ready = false; //just a boolean to let us know when all the polys are drawn!
 var makeCone = function(targ, h, w, v, isCone, t, r, rez) {
     numCones++;
     console.log('cone with rez:', rez)
@@ -127,7 +129,7 @@ var totalObjs = rects.length + cyls.length,
                 buildIt();
             }, 5)
         } else {
-            console.log('FINAL POLY COUNT:', polyNum, 'polygons.');
+            drawFlames();
         }
     };
 
@@ -142,5 +144,40 @@ window.onmousemove = function(e) {
 window.onkeyup = function(e) {
     if (e.which == 83) {
         rotOn = !rotOn;
+    }
+}
+var drawFlames = function() {
+    rcsNoz = [].slice.call($('.rcs-pod-wall .cone-cont'));
+    rcsNoz.forEach(function(el){
+        var rfl= document.createElement('div');
+        rfl.className = 'sm-flm';
+        var rflx = document.createElement('div');
+        rflx.className = 'sm-flm2';
+        $(rfl).append(rflx);
+        $(el).append(rfl);
+        rfl.style.display='none';
+    })
+    ready = true;
+}
+var moveMe = function(d){
+    if(!ready){
+        return false;
+    }
+    //start by shutting all nozzles OFF:
+    rcsNoz.forEach(function(el){
+        $(el).find('.sm-flm').css('display','none')
+    })
+    var dirs = d.split('-');
+    // can we do some sort of error checking here, to make sure the movement type and dir actually exist?
+    if(dirs[0]=='translation'){
+        //straight translation
+        moves[dirs[0]][dirs[1]]].forEach(function(n){
+            $(n).css('display','block');
+        })
+    }else{
+        //rotation
+        moves[dirs[0]][dirs[1]][dirs[2]].forEach(function(n){
+            $(n).css('display','block');
+        })
     }
 }

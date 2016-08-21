@@ -574,3 +574,24 @@ body {
     background:#888;
     transform:rotateX(90deg) translateZ(10px);
 }
+
+.sm-flm {
+    position: absolute;
+    width: 5px;
+    height: 20px;
+    transform: translateY(20px) translateX(1px);
+    border-radius: 50%;
+    box-shadow: 0 0 7px 4px #fed;
+    background: #fed;
+    transform-style: preserve-3d;
+}
+
+.sm-flm2 {
+    position: absolute;
+    width: 5px;
+    height: 20px;
+    transform: translateY(0px) translateX(0px) rotateY(90deg);
+    border-radius: 50%;
+    box-shadow: 0 0 7px 4px #fed;
+    background: #fed;
+}
