@@ -142,8 +142,56 @@ window.onmousemove = function(e) {
 
 }
 window.onkeyup = function(e) {
-    if (e.which == 83) {
+    console.log('keyup!')
+    moveMe('off');
+    if (e.which == 80) {
         rotOn = !rotOn;
+    }
+}
+window.onkeydown = function(e){
+    //movement!
+    console.log(e.which);
+    switch(e.which){
+        case 35:
+        case 97:
+            e.preventDefault();
+            moveMe('rotate-yaw-left');
+            break;
+        case 45:
+        case 96:
+            e.preventDefault();
+            moveMe('rotate-yaw-right');
+            break;
+        case 38:
+            moveMe('rotate-pitch-fwd');
+            break;
+        case 40:
+            moveMe('rotate-pitch-back');
+            break;
+        case 37:
+            moveMe('rotate-roll-left');
+            break;
+        case 39:
+            moveMe('rotate-roll-right');
+            break;
+        case 87:
+            moveMe('translate-forward');
+            break;
+        case 83:
+            moveMe('translate-back');
+            break;
+        case 81:
+            moveMe('translate-up');
+            break;
+        case 90:
+            moveMe('translate-down');
+            break;
+        case 65:
+            moveMe('translate-left');
+            break;
+        case 68:
+            moveMe('translate-right');
+            break;
     }
 }
 var drawFlames = function() {
@@ -167,11 +215,14 @@ var moveMe = function(d){
     rcsNoz.forEach(function(el){
         $(el).find('.sm-flm').css('display','none')
     })
+    if(d=='off'){
+        return false;
+    }
     var dirs = d.split('-');
     // can we do some sort of error checking here, to make sure the movement type and dir actually exist?
-    if(dirs[0]=='translation'){
+    if(dirs[0]=='translate'){
         //straight translation
-        moves[dirs[0]][dirs[1]]].forEach(function(n){
+        moves[dirs[0]][dirs[1]].forEach(function(n){
             $(n).css('display','block');
         })
     }else{

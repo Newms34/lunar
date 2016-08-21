@@ -19,3 +19,20 @@ TO DO:
 129.549217*40.73/106, x=49.97
 
 RAT:1.13793182
+
+KEY CODES:
+70 - f - raise thrust
+86 - v - lower thrust
+81 - q - trans up
+90 - z - trans down
+87 - w - trans fwd
+83 - s - trans back
+65 - a - trans left
+68 - d - trans right
+
+97/35 - num-1 - rot yaw left
+96/45 - num-0 - rot yaw right
+38 - up arrow - rot pitch fwd
+40 - down arrow - rot pitch back
+37 - left arrow - rot roll left
+39 - right arrow - rot roll right
