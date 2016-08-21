@@ -8,13 +8,9 @@ MEASURER: https://jsfiddle.net/c9mLfo41/27/show/
 
 
 TO DO: 
-1) RCS nodes - each RCS node has FOUR jets:
-	v
-	o<
-	^
-	and is on a pyramidal structure made of TUBES (NOT solid pyramid!)
+1) rcs jets: each designated by id of rcs pod (i.e., rcs2) and panel of pod on which it's attached (i.e., rcs-pod-f). For int (item 3 below), create list of what movement 'actions' activate which pods.
 2) 'porch'/ladder?
-3)INTERACTIVITY!
+3)INTERACTIVITY!: rcs pod interactivity, thrust increase/decrease/cut. And of course, gravity, surface colision, etc.
 
 
 
