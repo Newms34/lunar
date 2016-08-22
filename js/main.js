@@ -2,8 +2,29 @@ var cylRes = 15; //number of segs per cylinder (default, unless otherwise specif
 var numCyls = 0,
     numCones = 0,
     polyNum = 0,
-    rcsNoz,//for easy reference later to shut them all OFF.
-    ready = false; //just a boolean to let us know when all the polys are drawn!
+    rcsNoz, //for easy reference later to shut them all OFF.
+    ready = false, //just a boolean to let us know when all the polys are drawn!
+    throttle = 0,//max 100, min 0.
+    rot = {
+        x:0,//pitch
+        y:0,//yaw
+        z:0//roll
+    },
+    dRot = {
+        x:0,//change pitch
+        y:0,//change yaw
+        z:0//change roll
+    },tran = {
+        x:0,//left-right
+        y:0,//up-down
+        z:0//back-front
+    },
+    dTran = {
+        x:0,//change left-right
+        y:0,//change up-down
+        z:0//change back-front
+    },
+    rotPwr = .2;//how 'powerful' the rcs engines are
 var makeCone = function(targ, h, w, v, isCone, t, r, rez) {
     numCones++;
     console.log('cone with rez:', rez)
@@ -134,7 +155,7 @@ var totalObjs = rects.length + cyls.length,
     };
 
 buildIt();
-var rotOn = true;
+var rotOn = false;
 window.onmousemove = function(e) {
     if (rotOn) {
         $('#cont').css('transform', ' translateZ(300px) rotateX(' + e.y + 'deg) rotateY(' + e.x + 'deg)');
@@ -146,20 +167,23 @@ window.onkeyup = function(e) {
     moveMe('off');
     if (e.which == 80) {
         rotOn = !rotOn;
+        if (!rotOn) {
+            $('#cont').css('transform', ' translateZ(300px) rotateX(' + rot.x + 'deg) rotateY(' + rot.y + 'deg) rotateZ(' + rot.z + 'deg)');
+        }
     }
 }
-window.onkeydown = function(e){
+window.onkeydown = function(e) {
     //movement!
     console.log(e.which);
-    switch(e.which){
+    switch (e.which) {
         case 35:
         case 97:
-            e.preventDefault();
+            e.preventDefault(); //we're sticking a prevent default in here so that pressing 'insert' or 'end' wont move the page or whatever!
             moveMe('rotate-yaw-left');
             break;
         case 45:
         case 96:
-            e.preventDefault();
+            e.preventDefault(); //we're sticking a prevent default in here so that pressing 'insert' or 'end' wont move the page or whatever!
             moveMe('rotate-yaw-right');
             break;
         case 38:
@@ -192,43 +216,92 @@ window.onkeydown = function(e){
         case 68:
             moveMe('translate-right');
             break;
+        case 70:
+            if (throttle<100){
+                throttle+=5;
+            }
+            break;
+        case 86:
+            if (throttle && throttle>0){
+                throttle-=5;
+            }
+            break;
     }
 }
 var drawFlames = function() {
     rcsNoz = [].slice.call($('.rcs-pod-wall .cone-cont'));
-    rcsNoz.forEach(function(el){
-        var rfl= document.createElement('div');
+    rcsNoz.forEach(function(el) {
+        var rfl = document.createElement('div');
         rfl.className = 'sm-flm';
         var rflx = document.createElement('div');
         rflx.className = 'sm-flm2';
         $(rfl).append(rflx);
         $(el).append(rfl);
-        rfl.style.display='none';
+        rfl.style.display = 'none';
     })
     ready = true;
 }
-var moveMe = function(d){
-    if(!ready){
+var moveMe = function(d) {
+    if (!ready) {
         return false;
     }
     //start by shutting all nozzles OFF:
-    rcsNoz.forEach(function(el){
-        $(el).find('.sm-flm').css('display','none')
+    rcsNoz.forEach(function(el) {
+        $(el).find('.sm-flm').css('display', 'none')
     })
-    if(d=='off'){
+    if (d == 'off') {
         return false;
-    }
-    var dirs = d.split('-');
-    // can we do some sort of error checking here, to make sure the movement type and dir actually exist?
-    if(dirs[0]=='translate'){
-        //straight translation
-        moves[dirs[0]][dirs[1]].forEach(function(n){
-            $(n).css('display','block');
-        })
-    }else{
-        //rotation
-        moves[dirs[0]][dirs[1]][dirs[2]].forEach(function(n){
-            $(n).css('display','block');
-        })
+    } else {
+        var dirs = d.split('-');
+        // can we do some sort of error checking here, to make sure the movement type and dir actually exist?
+        if (dirs[0] == 'translate') {
+            //straight translation
+            //activate jets
+            moves[dirs[0]][dirs[1]].forEach(function(n) {
+                $(n).css('display', 'block');
+            })
+            //no translation movement for now, since I
+            // dont want the craft zooming off the screen!
+            // changePos(dirs);
+        } else {
+            //rotation
+            //activate jets
+            moves[dirs[0]][dirs[1]][dirs[2]].forEach(function(n) {
+                $(n).css('display', 'block');
+            })
+            changePos(dirs);
+        }
     }
 }
+var changePos = function(moveArr){
+    //change the deltas for translation/rotation
+    var ms = moveArr.join('-');
+    switch(ms){
+        case 'rotate-yaw-left':
+            dRot.y+=rotPwr;
+            break;
+        case 'rotate-yaw-right':
+            dRot.y-=rotPwr;
+            break;
+        case 'rotate-pitch-fwd':
+            dRot.x+=rotPwr;
+            break;
+        case 'rotate-pitch-back':
+            dRot.x-=rotPwr;
+            break;
+        case 'rotate-roll-left':
+            dRot.z-=rotPwr;
+            break;
+        case 'rotate-roll-right':
+            dRot.z+=rotPwr;
+            break;
+        
+    }
+}
+var t = setInterval(function(){
+    rot.x+=dRot.x;
+    rot.y+=dRot.y;
+    rot.z+=dRot.z;
+    $('#cont').css('transform', ' translateZ(300px) rotateX(' + rot.x + 'deg) rotateY(' + rot.y + 'deg) rotateZ(' + rot.z + 'deg)');
+    $('.flame').css({'height':throttle+'px','width':(20*throttle/100)+'px'});
+},50)

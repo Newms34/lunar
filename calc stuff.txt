@@ -36,3 +36,5 @@ KEY CODES:
 40 - down arrow - rot pitch back
 37 - left arrow - rot roll left
 39 - right arrow - rot roll right
+
+https://jsfiddle.net/rffmnypo/13/ devicemotion / orientation stuff (phone support)
