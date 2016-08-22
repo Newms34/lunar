@@ -226,6 +226,10 @@ window.onkeydown = function(e) {
                 throttle-=5;
             }
             break;
+        case 32:
+            e.preventDefault();
+            throttle=0;
+            break;
     }
 }
 var drawFlames = function() {

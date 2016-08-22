@@ -6,8 +6,9 @@
 
 ####Main LEM Engine Thrust:
 
- - F - Increase Thrust (currently not enabled)
- - V - Decrease Thrust (currently not enabled)
+ - F - Increase Thrust 
+ - V - Decrease Thrust 
+ - Spacebar - Cut engine 
 
 ####Translation:
  - Q - Translate Up
@@ -25,4 +26,4 @@
  - Lf Arrow - Roll Left
  - Rt Arrow - Roll Right
 
-*Please note that none of the controls currently change the craft's attitude or position. That's for a later update! For now, they just activate the Reaction Control System (RCS) nodules.*
+*Please note that the translation system is currently not active. I'll implement that once I figure out how I want to create a play 'field'.*
