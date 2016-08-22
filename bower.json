@@ -1,0 +1,39 @@
+{
+  "name": "DavesLunarLander",
+  "description": "Just a lunar lander game!",
+  "main": "index.js",
+  "authors": [
+    "David Newman"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "lunar",
+    "LEM",
+    "Apollo",
+    "game",
+    "lander",
+    "3D",
+    "CSS3"
+  ],
+  "homepage": "https://github.com/Newms34/lunar",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-sanitize": "~1.4.1",
+    "angular": "~1.5.6",
+    "bootstrap": "~3.3.6",
+    "ngDialog": "~0.3.12",
+    "jquery": "~2.2.4",
+    "bootbox.js": "bootbox#~4.4.0",
+    "socket.io": "~1.4.6",
+    "socket.io-client": "~1.4.6"
+  }
+}

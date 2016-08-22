@@ -23,6 +23,7 @@ RAT:1.13793182
 KEY CODES:
 70 - f - raise thrust
 86 - v - lower thrust
+32 - spacebar - cut thrust (throttle=0)
 81 - q - trans up
 90 - z - trans down
 87 - w - trans fwd

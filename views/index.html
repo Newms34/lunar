@@ -1,0 +1,27 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>Dave's Lunar Lander Game</title>
+    <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
+</head>
+
+<body ng-app='lunApp' ng-controller='MainController' id='main-body' style='transform: translateX({{tran.x}}px) translateY({{tran.y}}px) translateZ({{tran.z}}px)'>
+    <div id='cont' style='transform: translateZ(300px) rotateX({{rot.x}}deg) rotateY({{rot.y}}deg) rotateZ({{rot.z}}deg);'>
+        <div id='lem'>
+            <div id='ascent-stage'>
+            </div>
+            <div id='descent-stage'>
+            </div>
+        </div>
+    </div>
+    <script src='/socket.io-client/socket.io.js'></script>
+    <script src='/jquery/dist/jquery.min.js'></script>
+    <script src='/bootstrap/dist/js/bootstrap.min.js'></script>
+    <script src='/angular/angular.js'></script>
+    <script src='/bootbox.js/bootbox.js'></script>
+    <script src='/js/all.min.js'></script>
+</body>
+
+</html>
