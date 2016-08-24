@@ -4,7 +4,8 @@
   "description": "Just a lunar lander game!",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "postinstall": "bower install"
   },
   "keywords": [
     "lunar",
