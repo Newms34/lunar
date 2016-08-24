@@ -39,7 +39,7 @@ io.on('error', function(err) {
 });
 //set port, or process.env if not local
 
-http.listen(process.env.port||8080);
+http.listen(process.env.PORT||8080);
 
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
@@ -68,7 +68,3 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
-/*TO DO:
--Add 'emergency stop' button to halt server
--Improve draw target accuracy. Should be centered
-*/
