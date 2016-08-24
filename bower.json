@@ -35,5 +35,8 @@
     "bootbox.js": "bootbox#~4.4.0",
     "socket.io": "~1.4.6",
     "socket.io-client": "~1.4.6"
+  },
+  "resolutions": {
+    "angular": "1.5.7"
   }
 }
