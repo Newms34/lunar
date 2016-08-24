@@ -37,6 +37,6 @@
     "socket.io-client": "~1.4.6"
   },
   "resolutions": {
-    "angular": "1.5.7"
+    "angular": "~1.5.6"
   }
 }
