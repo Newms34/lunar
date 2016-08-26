@@ -19,24 +19,44 @@
     <div id='mun' style='transform:translateY({{5000-tran.y}}px) translateZ(2030px) translateX(-1500px) rotateX(90deg);background-position: {{thirdPerson?0:tran.x}}px {{thirdPerson?0:tran.z+300}}px'>
         <div id='lemShad' style='transform:translateX({{thirdPerson?tran.x+1970:1970}}px) translateY({{thirdPerson?tran.z+2680:2680}}px);width:{{shadSz}}px;height:{{shadSz}}px'></div>
     </div>
-    <div class='panel panel-info col-md-3 pull-right'>
+    <div class='panel panel-info col-md-4 pull-right'>
         <div class='panel-heading'>
-            <h3>Controls</h3></div>
+            <span id='cont-lbl'>Controls</span> <button class='btn btn-danger pull-right' ng-click='inf=!inf' title='click to show/hide info'>&#128269;</button></div>
         <div class='panel-body'>
-            <p>
-                <h4>Options:</h4>
-                <span class='opt-icon' title='Camera position mode'>Cam &#127909;</span>: <span ng-if='thirdPerson'>Third</span><span ng-if='thirdPerson==false'>First</span>-Person
-                <br><br>
-                <span class='opt-icon' title='Gravity and vertical movement'>Grav &#11015;</span>: <span ng-if='activeGame' class='alert alert-success'>On</span><span ng-if='activeGame==false' class='alert alert-danger'>Off</span>
-            </p>
-            <hr>
-            <p>
-                <h4>Position data</h4>
-                <b>Distance to Lunar Surface:</b> {{round(activeGame?(9431-tran.y):0)}}
-                <br><br>
-                <b>Vertical Velocity:</b> {{round(activeGame?tranV.y:0)}};
-
-            </p>
+            <div ng-show='inf'>
+                <p>
+                    <h4>Options:</h4>
+                    <span class='opt-icon' title='Camera position mode'>Cam &#127909;</span>: <span ng-if='thirdPerson'>Third</span><span ng-if='thirdPerson==false'>First</span>-Person
+                    <br>
+                    <br>
+                    <span class='opt-icon' title='Gravity and vertical movement'>Grav &#11015;</span>: <span ng-if='activeGame' class='alert alert-success'>On</span><span ng-if='activeGame==false' class='alert alert-danger'>Off</span>
+                </p>
+                <hr>
+                <p>
+                    <h4>Craft Data:</h4>
+                    <b>Distance to Lunar Surface:</b> {{round(activeGame?(9431-tran.y):0)}} meters
+                    <br>
+                    <br>
+                    <b>Vertical Velocity:</b> {{round(activeGame?tranV.y:0)}}m/s
+                    <br><br>
+                    <b>Throttle:</b> {{throttle}}%
+                </p>
+                <hr>
+                <p>
+                    <h4>Keyboard controls</h4>
+                    <p class='key-cmds'><span class='alert alert-info'>F</span> - Increase Throttle</p>
+                    <p class='key-cmds'><span class='alert alert-info'>V</span> - Decrease Throttle</p>
+                    <p class='key-cmds'><span class='alert alert-info'>Spacebar</span> - Cut Throttle</p>
+                    <p class='key-cmds'><span class='alert alert-info'>W</span><span class='alert alert-info'>A</span><span class='alert alert-info'>S</span><span class='alert alert-info'>D</span> - Translation (fwd/back, left/right)</p>
+                    <p class='key-cmds'><span class='alert alert-info'>Q</span> - Translate up</p>
+                    <p class='key-cmds'><span class='alert alert-info'>Z</span> - Translate down</p>
+                    <p class='key-cmds'><span class='alert alert-info'>&uparrow;</span><span class='alert alert-info'>&leftarrow;</span><span class='alert alert-info'>&downarrow;</span><span class='alert alert-info'>&rightarrow;</span> - Rotation (roll, pitch)</p>
+                    <p class='key-cmds'><span class='alert alert-info'>G</span> - Toggle Gravity<br><br>
+                    <i>&nbsp;&nbsp;&nbsp;Note: Turning gravity off resets the game!</i>
+                    </p>
+                    <p class='key-cmds'><span class='alert alert-info'>P</span> - Toggle camera mode (1st person or 3rd person)</p>
+                </p>
+            </div>
         </div>
     </div>
     <script src='/socket.io-client/socket.io.js'></script>

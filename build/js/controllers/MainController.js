@@ -3,6 +3,7 @@ var socket = io();
 
 app.controller("MainController", function($scope, $window) {
     //set an initial username
+    $scope.inf=true;
     $scope.mobilecheck = function() {
         $scope.grav = 99.546;
         $scope.rcsThrust = 1.815131578947368 / 10;
@@ -219,7 +220,7 @@ app.controller("MainController", function($scope, $window) {
                 moveMe('rotate-yaw-left');
                 break;
             case 45:
-            case 96:
+            case 98:
                 e.preventDefault(); //we're sticking a prevent default in here so that pressing 'insert' or 'end' wont move the page or whatever!
                 moveMe('rotate-yaw-right');
                 break;
