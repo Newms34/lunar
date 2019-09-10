@@ -23,13 +23,13 @@
         <div class='panel-heading'>
             <span id='cont-lbl'>Controls</span> <button class='btn btn-danger pull-right' ng-click='inf=!inf' title='click to show/hide info'>&#128269;</button></div>
         <div class='panel-body'>
-            <div ng-show='inf'>
+            <div>
                 <p>
                     <h4>Options:</h4>
-                    <span class='opt-icon' title='Camera position mode'>Cam &#127909;</span>: <span ng-if='thirdPerson'>Third</span><span ng-if='thirdPerson==false'>First</span>-Person
+                    <span class='opt-icon' title='Camera position mode'>Cam &#127909;</span>: <span ng-if='thirdPerson' class='alert alert-success' ng-click='thirdPerson=!thirdPerson'>Third</span><span ng-if='thirdPerson==false'  class='alert alert-info' ng-click='thirdPerson=!thirdPerson'>First</span>-Person
                     <br>
                     <br>
-                    <span class='opt-icon' title='Gravity and vertical movement'>Grav &#11015;</span>: <span ng-if='activeGame' class='alert alert-success'>On</span><span ng-if='activeGame==false' class='alert alert-danger'>Off</span>
+                    <span class='opt-icon' title='Gravity and vertical movement'>Grav &#11015;</span>: <span ng-if='activeGame' class='alert alert-success' ng-click='activeGame=!activeGame'>On</span><span ng-if='activeGame==false' class='alert alert-danger' ng-click='activeGame=!activeGame'>Off</span>
                 </p>
                 <hr>
                 <p>
@@ -42,7 +42,7 @@
                     <b>Throttle:</b> {{throttle}}%
                 </p>
                 <hr>
-                <p>
+                <p ng-show='inf'>
                     <h4>Keyboard controls</h4>
                     <p class='key-cmds'><span class='alert alert-info'>F</span> - Increase throttle</p>
                     <p class='key-cmds'><span class='alert alert-info'>V</span> - Decrease throttle</p>

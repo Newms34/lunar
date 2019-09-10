@@ -193,7 +193,7 @@ app.controller("MainController", function($scope, $window) {
             if (currObj < totalObjs) {
                 setTimeout(function() {
                     buildIt();
-                }, 5)
+                }, 25)
             } else {
                 drawFlames();
             }

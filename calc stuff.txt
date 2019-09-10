@@ -39,32 +39,7 @@ KEY CODES:
 39 - right arrow - rot roll right
 
 https://jsfiddle.net/rffmnypo/13/ devicemotion / orientation stuff (phone support)
-
-Mismatch associations:
-xyzPercs.x = y axis
-xyzPercs.y = x axis
-
-Now we use the historical lunar module engine data vs. weight to get a sense of the MAX acceleration this thing could undergo.
-15200kg is descent weight (i.e., before the rocks and stuff)
-45038.244N (kg*m/s^2)
-F=ma,
-45038.244 = 15200*a
-a= 2.96 m/s^2
-accel to grav on moon = 1.60
-
-SCALE: 438 px high, 7.04m
-7.04m      
------   =   secs to do 1 length = 2.378378378378378
-2.96
-0.4204545454545455 lengths/sec
-so 438*0.4204545454545455 = 184.16m/s^2
-
-so each tick, we add a max of 184.16/20 m/s to each dir (div by 20 since each tick is 50 ms, or 1/20 sec)
-
-y accel gets grav from moon subtracted from that amt:
-
-1.6m/s *62px/m  =99.54m/s^2 = g
-
-RCS:
-0.0292763157894737m/s accel * 62px/m
-1.815131578947368 px/s PER rcs engine
+TO DO: 
+Write 'start' instructions
+explain what grav 'off' does (it ONLY affects vertical movement!)
+make grav thing clickable, do same for third/first person 
